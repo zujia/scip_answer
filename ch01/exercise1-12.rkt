@@ -1,0 +1,5 @@
+(define (yang a b)
+  (cond ((= b 1) 1)
+        ((= a b) 1)
+        (else (+ (yang (- a 1) (- b 1)) (yang (- a 1) b)))))
+(yang 5 3)
