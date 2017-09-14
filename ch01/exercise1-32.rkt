@@ -16,5 +16,5 @@
 (define (sum-cubes a b)
   (sum cube a inc b))
 (define (cube n) (* n n n))
-(sum-cubes 1 10000000)
+(sum-cubes 1 1 
 
