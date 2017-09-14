@@ -1,0 +1,17 @@
+(define (compose f g)
+  (lambda (x) (f (g x))))
+(define (square x)
+  (* x x))
+(define (inc n)
+  (+ 1 n))
+(define (repeated f n)
+  (if (= 1 n)
+      f
+      (compose f (repeated f (- n 1)))))
+(define (repeated-iter f n)
+  (define (iter i g)
+    (if (= n i)
+        g
+        (iter (+ 1 i) (compose f g))))
+  (iter 1 f))
+((repeated-iter square 2) 5)
