@@ -1,0 +1,5 @@
+(define (same-parity x . y)
+  (if (null? y)
+      x
+      (if (even? (+ (car y) (car x)))
+          (same-parity (cons x (car y)) . (cdr y))))) 
