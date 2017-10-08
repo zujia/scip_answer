@@ -1,0 +1,13 @@
+(define (length items)
+  (if (null? items)
+      0
+      (+ 1 (length (cdr items)))))
+(define x (cons (list 1 2) (list 3 4)))
+(length x)
+(define (count-leaves x)
+  (cond ((null? x) 0)
+        ((not (pair? x)) 1)
+        (else (+ (count-leaves (car x))
+                 (count-leaves (cdr x))))))
+(count-leaves x)
+(list 1 (list 2 (list 3 4)))
