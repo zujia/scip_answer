@@ -12,9 +12,5 @@
   (iter a null-value))
 (define (sum term a next b)
   (accumulate-iter + 0 term a next b))
-(define (inc n) (+ n 1))
-(define (sum-cubes a b)
-  (sum cube a inc b))
-(define (cube n) (* n n n))
-(sum-cubes 1 1 
-
+(define (product term a next b)
+  (accumulate-iter * 1 term a next b))
