@@ -11,7 +11,7 @@
 (define (dot-product v w)
   (accumulate + 0 (map * v w)))
 (define (matrix-*-vector m v)
-  (map (lambda (row) (dot-prot row v)) m))
+  (map (lambda (row) (dot-product row v)) m))
 (define (matrix-*-matrix m n)
   (map (lambda (x)
          (map (lambda (y)
