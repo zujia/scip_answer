@@ -12,7 +12,7 @@
 (define (element-of-set? x set)
   (cond ((null? set) false)
         ((= x (entry set)) true)
-        ((< (entry set))
+        ((< x (entry set))
          (element-of-set? x (left-branch set)))
         ((> x (entry set))
          (element-of-set? x (right-branch set)))))
