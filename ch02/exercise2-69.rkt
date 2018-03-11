@@ -59,3 +59,25 @@
         (adjoin-set (make-leaf (car pair)
                                (cadr pair))
                     (make-leaf-set (cdr pairs))))))
+(define (generate-huffman-tree pairs)
+  (successive-merge (make-leaf-set pairs)))
+
+(define (successive-merge leaf-set)
+  (if (null? (cdr leaf-set))
+      leaf-set
+      (successive-merge
+       (adjoin-set
+        (make-code-tree (car leaf-set) (cadr leaf-set))
+        (cddr leaf-set)))))
+(define encoding-tree 
+  (generate-huffman-tree 
+    (list 
+      (list 'A 8) 
+      (list 'B 3) 
+      (list 'C 1) 
+      (list 'D 1) 
+      (list 'E 1)
+      (list 'F 1)
+      (list 'G 1)
+      (list 'H 1))))
+encoding-tree
