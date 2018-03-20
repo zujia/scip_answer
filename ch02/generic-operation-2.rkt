@@ -3,7 +3,7 @@
 (define (scheme-number->complex n)
   (make-complex-from-real-imag (contents n) 0))
 
-(put-coercion 'scheme-number 'scheme scheme-number->complex)
+(put-coercion 'scheme-number 'complex scheme-number->complex)
 
 (define (apply-generic op . args)
   (let ((type-tags (map type args)))
