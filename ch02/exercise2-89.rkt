@@ -1,0 +1,20 @@
+#lang sicp
+
+(define (adjoin-term term term-list)
+  (if (=zero? (coeff term))
+      (term-list)
+      (let ((exponent (order term))
+            (list-exponet (- (length term-list) 1)))
+        (cond ((= exponent list-exponent)
+               (cons (+ (coeff term)
+                        (car term-list))
+                     (cdr term-list)))
+              ((< exponent list-exponent)
+               (cons (car term-list)
+                     (adjoin-term term (cdr term-list))))
+              ((> exponent list-exponent)
+               (adjoin-term term (cons 0 term-list)))))))
+
+(define (first-term term-list)
+  (make-term (- (length term-list) 1)
+             (car term-list)))
