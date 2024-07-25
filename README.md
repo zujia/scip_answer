@@ -1,3 +1,3 @@
 # scip_answer
-hello my new laptop.
-Hello, Next.
+Hello my new laptop.
+Hello, next.
